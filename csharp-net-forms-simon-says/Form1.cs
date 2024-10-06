@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace csharp_net_forms_simon_says
 {
     public partial class Form1 : Form
@@ -36,7 +38,32 @@ namespace csharp_net_forms_simon_says
 
         private void button_Click(object sender, EventArgs e)
         {
+            if (score > 3 && level < 7)
+            {
+                level++;
+                score = 0;
+            }
 
+            correctOrder = string.Empty;
+            playerOrder = string.Empty;
+            choseBoxes.Clear();
+            choseBoxes = pictureBoxes.OrderBy(x => rand.Next()).Take(level).ToList();
+
+            for (int i = 0; i < choseBoxes.Count; i++)
+            {
+                correctOrder += choseBoxes[i].Name + " ";
+            }
+
+            foreach (PictureBox x in pictureBoxes)
+            {
+                x.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            }
+
+            Debug.WriteLine(correctOrder);
+            index = 0;
+            timeLimit = 0;
+            selectingColours = true;
+            SecondTimer.Start();
         }
 
         private void SetUpBlock()
@@ -75,6 +102,11 @@ namespace csharp_net_forms_simon_says
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SecondTimerEvent(object sender, EventArgs e)
         {
 
         }

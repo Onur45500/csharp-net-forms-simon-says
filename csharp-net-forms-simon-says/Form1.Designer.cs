@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Title = new Label();
             button = new Button();
             label1 = new Label();
+            SecondTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // Title
@@ -63,6 +65,10 @@
             label1.TabIndex = 2;
             label1.Text = "Click on same order";
             // 
+            // SecondTimer
+            // 
+            SecondTimer.Tick += SecondTimerEvent;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -83,6 +89,7 @@
         private Label Title;
         private Button button;
         private Label label1;
+        private System.Windows.Forms.Timer SecondTimer;
         //private System.Windows.Forms.Timer GameTimerEvent;
     }
 }
