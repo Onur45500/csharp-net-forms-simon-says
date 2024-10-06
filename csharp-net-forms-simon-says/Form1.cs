@@ -7,4 +7,5 @@ namespace csharp_net_forms_simon_says
             InitializeComponent();
         }
     }
+        
 }
