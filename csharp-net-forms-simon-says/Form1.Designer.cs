@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Title = new Label();
             button = new Button();
             label1 = new Label();
+            GameTimerEvent = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // Title
@@ -42,7 +44,6 @@
             Title.Size = new Size(244, 38);
             Title.TabIndex = 0;
             Title.Text = "Simon says game";
-            
             // 
             // button
             // 
@@ -53,16 +54,20 @@
             button.TabIndex = 1;
             button.Text = "Start";
             button.UseVisualStyleBackColor = true;
+            button.Click += button_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(359, 392);
+            label1.Location = new Point(310, 389);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(140, 20);
             label1.TabIndex = 2;
-            label1.Text = "label1";
-            
+            label1.Text = "Click on same order";
+            // 
+            // GameTimerEvent
+            // 
+            GameTimerEvent.Tick += this.GameTimerEvent;
             // 
             // Form1
             // 
@@ -83,5 +88,7 @@
         private Label Title;
         private Button button;
         private Label label1;
+        private System.Windows.Forms.Timer GameTimerEvent;
+        private System.Windows.Forms.Timer GameTimerEvent;
     }
 }
