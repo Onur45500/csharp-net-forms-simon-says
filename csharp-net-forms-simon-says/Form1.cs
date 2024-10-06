@@ -2,7 +2,7 @@ namespace csharp_net_forms_simon_says
 {
     public partial class Form1 : Form
     {
-        int blocksX = 160;
+        int blocksX = 180;
         int blocksY = 80;
         int score = 0;
         int level = 3;
@@ -21,9 +21,12 @@ namespace csharp_net_forms_simon_says
 
         string correctOrder = string.Empty;
         string playerOrder = string.Empty;
+
+
         public Form1()
         {
             InitializeComponent();
+            SetUpBlock();
         }
 
         private void GameTimerEvent(object sender, EventArgs e)
@@ -37,6 +40,41 @@ namespace csharp_net_forms_simon_says
         }
 
         private void SetUpBlock()
+        {
+            for (int i = 1; i < 17; i++)
+            {
+                PictureBox newPic = new PictureBox();
+                newPic.Name = "pic_" + i;
+                newPic.Height = 60;
+                newPic.Width = 60;
+                newPic.BackColor = Color.Black;
+                newPic.Left = blocksX;
+                newPic.Top = blocksY;
+                newPic.Click += ClickOnPictureBox;
+
+                if (i == 4 || i == 8 || i == 12)
+                {
+                    blocksY += 65;
+                    blocksX = 180;
+                }
+                else
+                {
+                    blocksX += 65;
+                }
+
+                this.Controls.Add(newPic);
+                pictureBoxes.Add(newPic);
+            }
+
+
+        }
+
+        private void ClickOnPictureBox(object? sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

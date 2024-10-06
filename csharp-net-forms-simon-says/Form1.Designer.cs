@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             Title = new Label();
             button = new Button();
             label1 = new Label();
-            GameTimerEvent = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // Title
             // 
             Title.AutoSize = true;
             Title.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Title.Location = new Point(277, 23);
+            Title.Location = new Point(188, 24);
             Title.Name = "Title";
             Title.Size = new Size(244, 38);
             Title.TabIndex = 0;
@@ -48,7 +46,7 @@
             // button
             // 
             button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button.Location = new Point(333, 308);
+            button.Location = new Point(251, 370);
             button.Name = "button";
             button.Size = new Size(94, 55);
             button.TabIndex = 1;
@@ -59,26 +57,23 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(310, 389);
+            label1.Location = new Point(223, 428);
             label1.Name = "label1";
             label1.Size = new Size(140, 20);
             label1.TabIndex = 2;
             label1.Text = "Click on same order";
             // 
-            // GameTimerEvent
-            // 
-            GameTimerEvent.Tick += this.GameTimerEvent;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(582, 453);
             Controls.Add(label1);
             Controls.Add(button);
             Controls.Add(Title);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -88,7 +83,6 @@
         private Label Title;
         private Button button;
         private Label label1;
-        private System.Windows.Forms.Timer GameTimerEvent;
-        private System.Windows.Forms.Timer GameTimerEvent;
+        //private System.Windows.Forms.Timer GameTimerEvent;
     }
 }
